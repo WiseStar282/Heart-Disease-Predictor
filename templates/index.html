@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Disease Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <div id="main">
+            <h1>Heart Disease Prediction</h1>
+            <form action="{{ url_for('predict') }}" method="POST">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+
+                <label for="impluse">Pulse:</label>
+                <input type="number" id="impluse" name="impluse" required>
+
+                <label for="pressurehight">High Pressure:</label>
+                <input type="number" id="pressurehight" name="pressurehight" required>
+
+                <label for="pressurelow">Low Pressure:</label>
+                <input type="number" id="pressurelow" name="pressurelow" required>
+
+                <label for="glucose">Glucose:</label>
+                <input type="number" id="glucose" name="glucose" required>
+
+                <label for="kcm">Cholesterol (KCM):</label>
+                <input type="number" id="kcm" name="kcm" step="any" required>
+
+                <label for="troponin">Troponin Level:</label>
+                <input type="number" id="troponin" name="troponin" step="any" required>
+
+                <input type="submit" value="Predict">
+            </form>
+            {% if prediction and probability is not none %}
+            <div class="result">
+                <h2>Prediction Result:</h2>
+                <p>{{ prediction }}</p>
+                <h2>Prediction Probability:</h2>
+                <p>{{ probability }}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</body>
+
+</html>
