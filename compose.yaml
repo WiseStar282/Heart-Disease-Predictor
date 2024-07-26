@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: hichuru/heart-disease-predictor:latest
+    container_name: heart-disease
+    restart: unless-stopped
+    ports:
+      - 5001:5000

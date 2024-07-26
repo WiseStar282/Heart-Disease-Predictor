@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Disease Prediction</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="/heart-disease-predictor/static/styles.css">
 </head>
 
 <body>
     <div class="container">
         <div id="main">
             <h1>Heart Disease Prediction</h1>
-            <form action="{{ url_for('predict') }}" method="POST">
+            <form id="predictionForm" action="{{ url_for('predict') }}" method="POST">
                 <label for="age">Age:</label>
                 <input type="number" id="age" name="age" required>
 
@@ -42,6 +42,15 @@
 
                 <input type="submit" value="Predict">
             </form>
+            <script>
+                document.getElementById('predictionForm').addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    var form = this;
+                    var action = form.getAttribute('action');
+                    form.action = '/heart-disease-predictor' + action;
+                    form.submit();
+                });
+            </script>
             {% if prediction and probability is not none %}
             <div class="result">
                 <h2>Prediction Result:</h2>
