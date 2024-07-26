@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Heart Disease Prediction</title>
-    <link rel="stylesheet" href="/heart-disease-predictor/static/styles.css">
+    <link rel="stylesheet" href="/predictor/heart-disease/static/styles.css">
 </head>
 
 <body>
@@ -47,7 +47,7 @@
                     e.preventDefault();
                     var form = this;
                     var action = form.getAttribute('action');
-                    form.action = '/heart-disease-predictor' + action;
+                    form.action = '/predictor/heart-disease' + action;
                     form.submit();
                 });
             </script>
