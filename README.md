@@ -1,5 +1,6 @@
 # Heart-Disease-Predictor
 Heart Disease Predictor adalah aplikasi berbasis web yang dibangun menggunakan Python, yang memanfaatkan model pembelajaran mesin Random Forest untuk memprediksi kemungkinan adanya penyakit jantung pada seseorang. Aplikasi ini menerima input data dari pengguna mengenai beberapa parameter kesehatan dan memberikan hasil prediksi apakah orang tersebut memiliki risiko penyakit jantung atau tidak.
+Aplikasi dapat dicoba pada https://hichuru.online/predictor/heart-disease/
 
 ![Heart Disease Prediction - Google Chrome 2024-07-27 21-15-47 00_00_00-00_00_30](https://github.com/user-attachments/assets/242d2175-ba55-4607-8047-2aaf54d5e73d)
 
